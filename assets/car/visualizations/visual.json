@@ -1,0 +1,20 @@
+[
+  {
+    "filename": "ux_deficit_viz.png",
+    "slide_reference": "Slide 2: The UX Deficit",
+    "concept": "Abstract representation of cognitive overload vs. streamlined learning.",
+    "prompt": "Write a Python script using matplotlib to generate an abstract, dark-themed infographic showing 'Cognitive Overload'. Use a dark background (#0a0a0c). On the left side, draw a highly tangled, chaotic web of 50-100 nodes and intersecting lines in neon purple (#7000ff) with low alpha to represent traditional manual-based onboarding. On the right side, draw a clean, direct, glowing cyan curve (#00f2ff) representing the MR onboarding path. Add clean sans-serif text labels 'Traditional: High Friction' and 'MR: Intuitive Flow' in white (#e0e0e6). Remove all axes. Save the figure as 'ux_deficit_viz.png' with a 16:9 aspect ratio (e.g., figsize=(16,9), dpi=300)."
+  },
+  {
+    "filename": "simulator_hurdle_viz.png",
+    "slide_reference": "Slide 6: The Simulator Hurdle",
+    "concept": "Block diagram showing the broken link between VR simulators and physical car software.",
+    "prompt": "Write a Python script using matplotlib and patches (e.g., FancyBboxPatch) to draw a dark-themed architectural diagram illustrating the 'Simulator Hurdle'. Background: #0a0a0c. Draw two large stylized blocks: 'VR Game Engine' (colored with neon purple edges #7000ff) and 'Embedded Car OS' (cyan edges #00f2ff). Draw a thick connecting data pipeline between them that is visually shattered or zigzagged in the middle, representing a broken connection. At the break point, add a bright red/orange warning text label 'OTA Update / Physics Mismatch'. Use a clean, tech-inspired layout, remove axes, and save as 'simulator_hurdle_viz.png' in 16:9 (figsize=(16,9), dpi=300)."
+  },
+  {
+    "filename": "showroom_pivot_viz.png",
+    "slide_reference": "Slide 7: The Showroom Pivot",
+    "concept": "Data-viz style representation of MR spatial anchors mapping to physical space.",
+    "prompt": "Write a Python script using matplotlib to create a stylized, data-visualization illustration of 'Mixed Reality Spatial Anchors'. Use a dark background (#0a0a0c). Draw a 3D wireframe grid or abstract concentric glowing rings (like a LiDAR scan or spatial mesh) in subtle grey and glowing cyan (#00f2ff). Overlay several distinct, sharp geometric markers (like crosshairs or diamond scatter points) in neon purple (#7000ff) to represent digital UI tooltips anchored to the physical grid. Connect a few of these points with dashed lines. Remove axes, create a high-tech HUD aesthetic, and save as 'showroom_pivot_viz.png' in 16:9 (figsize=(16,9), dpi=300)."
+  }
+]
