@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mixed Reality onboarding experience for the Mahindra XEV 9e electric vehicle — contextual passthrough overlays that convert technological complexity into customer confidence.">
+    <title>Mahindra XEV 9e - Immersive MR Onboarding Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-indicator" id="slideIndicator">01 / 25</div>
+    
+    <div class="auto-scroll-controls" id="autoScrollControls">
+        <button class="auto-scroll-btn" id="autoScrollToggle" title="Auto Scroll (P)">Auto Scroll</button>
+        <div class="speed-selector">
+            <button class="speed-btn" data-speed="2">2x</button>
+            <button class="speed-btn active" data-speed="3">3x</button>
+            <button class="speed-btn" data-speed="5">5x</button>
+            <button class="speed-btn" data-speed="8">8x</button>
+        </div>
+    </div>
+
+    <div class="presentation-container">
+        <div class="slides-wrapper" id="slidesWrapper">
+            
+            <!-- 1. Title Slide -->
+            <section class="slide title-slide active">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <p class="supertitle">Mahindra Automotive</p>
+                    <h1>MR Car<br>Onboarding</h1>
+                    <p class="tagline">Experiential mastery through high-fidelity Mixed Reality passthrough.</p>
+                </div>
+            </section>
+
+            <!-- 2. Define Industry -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">THE INDUSTRY</p>
+                        <h2>Automotive Evolution</h2>
+                        <p>The global automotive industry is moving from mechanical engineering to a tech-first <strong>Software Defined Vehicle (SDV)</strong> ecosystem.</p>
+                        <div class="list-item"><strong>Legacy:</strong> Focus on horsepower and physical reliability.</div>
+                        <div class="list-item"><strong>The Shift:</strong> Electrification and autonomous driving systems.</div>
+                        <div class="list-item"><strong>Modern:</strong> User experience as the primary differentiator.</div>
+                    </div>
+                    <div class="slide-card img-card">
+                        <img src="assets/car/mahindra_car.png" alt="Mahindra XEV 9e">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. What & Why -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="slide-card image-stack-grid image-stack-grid-2">
+                         <div class="image-container"><img src="assets/car/cognitive overload.png" alt="Cognitive Overload in Modern Vehicles"></div>
+                         <div class="image-container"><img src="assets/car/failure of traditional manuals.png" alt="Failure of Traditional Manuals"></div>
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">THE CHALLENGE</p>
+                        <h2>Complexity vs. Confidence</h2>
+                        <p>As vehicles become more intelligent, the "UX Deficit" in the showroom leads to customer hesitation.</p>
+                        <div class="list-item"><strong>The Problem:</strong> High-tech features are invisible and hard to explain.</div>
+                        <div class="list-item"><strong>The Why:</strong> Confused customers delay purchases, impacting conversion.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Workflow & Methodology -->
+            <section class="slide methodology-slide">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 1rem;">OUR APPROACH</p>
+                    <h2>Design Methodology</h2>
+                    <div class="storyboard-grid methodology-stack">
+                        <div class="challenge-card"><h3>01. Research</h3><p>Mapping the gap between feature density and spatial understanding.</p></div>
+                        <div class="challenge-card"><h3>02. Storyboarding</h3><p>Visualizing the high-friction "As-Is" vs. the seamless "To-Be" journey.</p></div>
+                        <div class="challenge-card"><h3>03. Pivot</h3><p>Choosing MR Passthrough over VR to maintain environment connection — and restricting the experience to stationary vehicles to eliminate motion sickness entirely.</p></div>
+                        <div class="challenge-card"><h3>04. Prototype</h3><p>Engineering spatial anchors and gated logic flows.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Final Problem Statement -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <p style="color: var(--danger); font-weight: 900; font-size: 1.2rem; letter-spacing: 0.1em; margin-bottom: 2rem;">Problem statement</p>
+                    <h2 style="font-size: 1.3rem; text-align: center; max-width: 1000px; margin: 0 auto; line-height: 1.3; text-transform: none;">"How might we convert technological complexity into <strong>customer confidence</strong> to remove the final barrier to purchase?"</h2>
+                </div>
+            </section>
+
+            <!-- 6. Solution in one line -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <p style="color: var(--accent); font-weight: 900; font-size: 1.2rem; letter-spacing: 0.1em; margin-bottom: 2rem;">The solution</p>
+                    <h2 style="font-size: 1.6rem; line-height: 1.2; text-align: center; max-width: 1100px; margin: 0 auto; text-transform: none;">Mixed Reality passthrough overlays contextual intelligence <strong>directly onto the physical vehicle cockpit.</strong></h2>
+                </div>
+            </section>
+
+            <!-- 7. Users & Buyers -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">STAKEHOLDERS</p>
+                        <h2>Target Personas</h2>
+                        <p>Defining the core users and decision-makers who benefit from a frictionless, high-impact MR onboarding experience.</p>
+                        <div class="list-item"><strong>THE USER:</strong> Understand feature utility before investment.</div>
+                        <div class="list-item"><strong>THE DEALERSHIP:</strong> Secure deposits with tech-first tools.</div>
+                        <div class="list-item"><strong>Sales Staff:</strong> High-impact, automated demonstration aids.</div>
+                    </div>
+                    <div class="slide-card image-stack-grid image-stack-grid-2">
+                        <div class="image-container"><img src="assets/images/the buyer.png" alt="The Buyer"></div>
+                        <div class="image-container"><img src="assets/images/the dealership.png" alt="The Dealership"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. AS-IS Journey -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">AS-IS JOURNEY</p>
+                        <h2>Showroom Friction</h2>
+                        <p>The traditional showroom experience is plagued by cognitive overload and environmental disconnection.</p>
+                    </div>
+                    <div class="cycle-card">
+                        <div class="cycle-container">
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/car/scenes/scene 1.png" alt="Arrival"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>Arrival</strong><p>Excitement meets technical apprehension.</p></div>
+                            </div>
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/car/scenes/scene 3.png" alt="VR Wall"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>VR Wall</strong><p>Occluded VR causes environment disconnect.</p></div>
+                            </div>
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/car/scenes/scene 6.png" alt="The Lost Sale"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>The Lost Sale</strong><p>Overload leads to "I need to think about it."</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. TO-BE Journey -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="cycle-card" style="border-right: 1px solid var(--glass-border);">
+                        <div class="cycle-container">
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/car/scenes/A.png" alt="The Pivot"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>The Pivot</strong><p>Passthrough Visor.</p></div>
+                            </div>
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/car/scenes/B.png" alt="Discovery"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>Discovery</strong><p>Contextual digital signifiers.</p></div>
+                            </div>
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/car/scenes/C.png" alt="Confidence"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>Confidence</strong><p>Learning through doing.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">TO-BE JOURNEY</p>
+                        <h2>The MR Intervention</h2>
+                        <p>Mixed Reality passthrough overlays contextual intelligence directly onto the physical vehicle cockpit.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Pivot: Why VR Simulators Fail -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--danger); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">THE PIVOT</p>
+                        <h2>The Simulator Hurdle</h2>
+                        <div class="list-item" style="border-color: var(--danger);"><strong>Version Control:</strong> OTA updates break 1:1 digital twins.</div>
+                        <div class="list-item" style="border-color: var(--danger);"><strong>OS Logic:</strong> Rebuilding complex UI code is inefficient.</div>
+                        <div class="list-item" style="border-color: var(--danger);"><strong>Liability:</strong> Physics mismatches create sensory conflict.</div>
+                    </div>
+                    <div class="slide-card image-stack-grid image-stack-grid-3">
+                        <div class="image-container"><img src="assets/images/ota updates.png" alt="OTA Update Version Control"></div>
+                        <div class="image-container"><img src="assets/images/os logic.png" alt="OS Logic Complexity"></div>
+                        <div class="image-container"><img src="assets/images/physical mismatch.png" alt="Physical Mismatch Liability"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Flow 01 -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SYSTEM DESIGN: FLOW 01</p>
+                        <h2>Digital Twin Alignment</h2>
+                        <p>The initial MR handshake: A real-time spatial scan that synchronizes the digital interface with the physical XEV 9e cockpit.</p>
+                        <div class="list-item"><strong>Interaction:</strong> Automated point-cloud anchoring via gaze and spatial mapping.</div>
+                        <div class="list-item"><strong>Connection:</strong> The MR headset communicates with the XEV 9e via secure API integration for real-time telemetry.</div>
+                        <div class="list-item"><strong>Status:</strong> 1:1 Digital-to-Physical calibration confirmed before session start.</div>
+                    </div>
+                    <div class="slide-card img-card">
+                        <img src="assets/prototype/scanning_car.png" alt="Digital Twin Alignment" style="object-fit: contain; width: 100%; height: 100%; padding: 2rem;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Flow 02 -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="slide-card img-card" style="border-right: 1px solid var(--glass-border);">
+                        <img src="assets/prototype/Slide 16_9 - 1.png" alt="Exterior Discovery - Flush Door Handle" style="object-fit: contain; width: 100%; height: 100%; padding: 2rem;">
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SYSTEM DESIGN: FLOW 02</p>
+                        <h2>Exterior Discovery</h2>
+                        <p>Flush door handle spatial anchor with cyan outline and floating info dialog.</p>
+                        <div class="list-item"><strong>Voice:</strong> "More info" / "Less info" state management.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. Flow 03 -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SYSTEM DESIGN: FLOW 03</p>
+                        <h2>Interior Setup</h2>
+                        <p>Immediate tactile validation of vehicle intelligence.</p>
+                        <div class="list-item"><strong>Sequence:</strong> Automatic seat sliding and height profile sync.</div>
+                    </div>
+                    <div class="slide-card image-stack-grid image-stack-grid-2">
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 3.png" alt="Interior Setup - Seat Adjustment"></div>
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 4.png" alt="Interior Setup - Profile Sync"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 14. Flow 04 -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="slide-card image-stack-grid image-stack-grid-2">
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 5.png" alt="Audio System Overview"></div>
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 5.2.png" alt="Audio System Skip Path"></div>
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SYSTEM DESIGN: FLOW 04</p>
+                        <h2>Audio System Branching</h2>
+                        <p>The first experiential fork: User-led discovery of infotainment value.</p>
+                        <div class="list-item"><strong>Decision:</strong> Experience vs. Skip offering user agency.</div>
+                        <div class="list-item"><strong>Tutorials:</strong> Integrated video modules for complex or high-depth feature sets.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 15. Flow 05 -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SYSTEM DESIGN: FLOW 05</p>
+                        <h2>Parallel Tech Stack</h2>
+                        <p>Unified anchor-highlight pattern across multiple cabin features.</p>
+                        <div class="list-item"><strong>Features:</strong> AI Camera, Valet Mode, and Ambient Lighting.</div>
+                    </div>
+                    <div class="slide-card image-stack-grid image-stack-grid-3">
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 6.png" alt="AI Camera Feature"></div>
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 7.png" alt="Valet Mode Feature"></div>
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 8.png" alt="Ambient Lighting Feature"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 16. Flow 06 -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="slide-card image-stack-grid image-stack-grid-2">
+                        <div class="image-container"><img src="assets/prototype/Slide 16_9 - 9.png" alt="ADAS Sensor Visualization - Cones"></div>
+                        <div class="image-container"><img src="assets/prototype/adaptive cruise control.png" alt="Adaptive Cruise Control Visualization"></div>
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SYSTEM DESIGN: FLOW 06</p>
+                        <h2>ADAS & Adaptive Cruise</h2>
+                        <p>Visualizing the invisible safety shield while the vehicle is safely parked.</p>
+                        <div class="list-item"><strong>Sensor Cones:</strong> Real-time projection of radar and camera FOVs onto the showroom floor.</div>
+                        <div class="list-item"><strong>Adaptive Logic:</strong> Demonstrating distance-keeping and target acquisition through virtual vehicle overlays.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 17. System Logic Flow -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid" style="grid-template-columns: 0.8fr 1.2fr !important; gap: 0 !important; max-width: none !important; width: 100vw !important; height: 100vh !important; max-height: none !important; align-items: stretch; padding: 0; position: absolute; top: 0; left: 0;">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">LOGIC ARCHITECTURE</p>
+                        <h2>System Logic Flow</h2>
+                        <div class="list-item"><strong>Triggers:</strong> Proximity and physical button state.</div>
+                        <div class="list-item"><strong>Navigation:</strong> Gesture-led chapter traversal.</div>
+                    </div>
+                    <div class="slide-card img-card" style="background: var(--accent-light); padding: 2rem;">
+                        <img src="assets/mahindra_xev9e_mr_onboarding_user_flow.svg" alt="MR Onboarding User Flow Diagram" style="object-fit: contain;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 18. Spatial Design -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="cycle-card" style="border-right: 1px solid var(--glass-border);">
+                        <div class="cycle-container">
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/ui/interaction_zones.png" alt="Interaction Zones"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>Interaction Zones</strong><p>Optimal UI Zone (0.7m to 1.5m) vs. Direct Interaction (0.5m to 0.7m).</p></div>
+                            </div>
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/images/horizontal fov.png" alt="Horizontal View"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>Horizontal View</strong><p>120° Binocular View with 60° Central Focal Area.</p></div>
+                            </div>
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="image-container" style="border-radius: 0; border: none; border-bottom: 1px solid var(--glass-border); height: 65%;"><img src="assets/images/vertical fov.png" alt="Vertical View"></div>
+                                <div class="list-item" style="border: none !important; padding: 2rem;"><strong>Vertical View</strong><p>Focal optimized 12° degree tilt-down for dashboard ergonomics.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SPATIAL DESIGN</p>
+                        <h2>Designing for the Eye</h2>
+                        <p>Focal-optimized UI placement using depth-based interaction zones to minimize eye strain and focal fatigue.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 19. Operational Logic -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">OPERATIONAL LOGIC</p>
+                        <h2>10 Minutes. Then Rest.</h2>
+                        <p>Designing within the physical limits of current-gen MR hardware — in a showroom, not a moving cabin.</p>
+                        <div class="list-item"><strong>Session Cap:</strong> 10–15 min window to avoid thermal discomfort and headset fatigue.</div>
+                        <div class="list-item"><strong>Stationary Advantage:</strong> No motion sickness risk.</div>
+                    </div>
+                    <div class="slide-card img-card">
+                        <img src="assets/prototype/Slide 16_9 - 0.png" alt="Hardware Management" style="object-fit: contain; padding: 2rem;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 20. Interaction Modality -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="slide-card img-card" style="border-right: 1px solid var(--glass-border);">
+                        <img src="assets/images/raycasting.png" alt="Ray-Cast Interaction Prototype" style="object-fit: contain; padding: 2rem;">
+                    </div>
+                    <div class="text-block slide-card">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">INTERACTION MODALITY</p>
+                        <h2>Point. Don't Reach.</h2>
+                        <p>Far-field ray-casting eliminates "gorilla arm" fatigue, allowing users to control the entire Triple Screen array from a relaxed seated position.</p>
+                        <div class="list-item"><strong>Ray-Cast Precision:</strong> Laser-accurate targeting.</div>
+                        <div class="list-item"><strong>Magnetic Snapping:</strong> Intelligent cursor "gravity."</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 21. Spatial Anchoring -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="text-block slide-card">
+                        <p style="color: #EE9B00; font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SPATIAL ANCHORING</p>
+                        <h2>Spatial Anchoring</h2>
+                        <p>Every overlay is locked to the parked XEV 9e — not the road ahead.</p>
+                        <div class="list-item">All MR overlays are world-locked to physical XEV 9e surfaces — dashboard, steering wheel, console.</div>
+                        <div class="list-item">Tracking is fused with car telemetry/IMU data; UI bounces in perfect sync with the physical dashboard.</div>
+                        <div class="list-item"><strong>Result:</strong> Zero drift between digital anchor and physical button — stable for the entire stationary session, even with minor chassis flex from the user entering or exiting the seat.</div>
+                    </div>
+                    <div class="slide-card img-card" style="border-left: 1px solid var(--glass-border);">
+                        <img src="assets/images/spatial anchors.png" alt="Spatial Anchoring" style="object-fit: contain; padding: 2rem;">
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 22. Safety Protocol -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <p style="color: #EE9B00; font-weight: 900; font-size: 0.9rem; margin-bottom: 1rem;">SAFETY PROTOCOL</p>
+                    <h2>The Safe Handoff</h2>
+                    <p>Three phases. All before the drive starts.</p>
+                    <div class="storyboard-grid" style="margin-top: 3rem;">
+                        <div class="challenge-card"><h3>SHOWROOM</h3><p>Exterior discovery. Spatial anchors for door handles & lighting.</p></div>
+                        <div class="challenge-card"><h3>COCKPIT</h3><p>Interior exploration. Full ray-cast UI & voice training in Park.</p></div>
+                        <div class="challenge-card"><h3>HANDOFF</h3><p>MR conclusion. Visual prompt to remove headset for physical drive.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 23. Summary -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <p style="color: var(--primary); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">SUMMARY</p>
+                    <h2>Safe by Design</h2>
+                    <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                        <div class="list-item"><strong>Scope:</strong> MR operates exclusively in parked, showroom, and stationary test-drive contexts.</div>
+                        <div class="list-item"><strong>Anchoring:</strong> World-locked overlays tied to physical surfaces — stable for the full session.</div>
+                        <p style="margin-top: 2rem; font-style: italic; color: var(--primary); text-align: center;">"Designed to make the customer confident — before the engine starts."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 24. UI Library -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="content-grid card-grid">
+                    <div class="cycle-card" style="border-right: 1px solid var(--glass-border);">
+                        <div class="cycle-container">
+                            <!-- Item 1: MRPanel -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">MRPanel</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">World-locked floating spatial panel. Analogous to a bottom sheet or side panel in standard UI.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Layout:</strong> Heading row with circular 32px icon button header + paragraph body.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Anchor:</strong> Top-level container world-locked in VR space.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 2: Door Handle -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Door Handle</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">The main spatial UI card unit. 240x142px rounded card (rx 8px) with gradient background.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Variants:</strong> Full (Icon+Title+Body) and Half (Icon+Title, 80px tall) layouts.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Interactions:</strong> 2px #50C5FF outline border for Hover and Pressing states.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 3: Gestures -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Gesture Tokens</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">A minimal interaction vocabulary designed for cockpit efficiency and eye-strain reduction.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Pinch:</strong> Maps to Select / Confirm action in VR space.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Swipe:</strong> Maps to Scroll / Navigate within spatial panels.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 4: Buttons -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Standalone Buttons</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">Dedicated button components (103x64px) separate from door handle card logic.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>3-State Set:</strong> Default (#272727), Hover (#5A5A5A), and Pressed (#747474).</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Utility:</strong> Used for explicit actions inside UIPanels like "Automatic Seat Sliding".</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 5: Palette -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Color Palette</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">Specific token values pulled from Figma to ensure consistent depth and contrast in MR passthrough.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Gradients:</strong> Precise angles (157.58° and 166.862°) used for dialog/modal backgrounds.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Hierarchy:</strong> Success green gradients vs. standard neutral hover states.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 6: Camera Modules -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Camera Modules</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">277px wide media cards with live camera thumbnails and carousel navigation.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Usage:</strong> ADAS Vision (AI camera) and secondary video call modules.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>States:</strong> Default, Active, and Expanded (283px tall) video feed variants.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 7: Audio System -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Audio & Profile</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">Control cards for Harman Kardon audio and driver profile height synchronization.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Patterns:</strong> Shared 6-state set across all list-style components.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Capability:</strong> Real-time seat and mirror adjustment triggers via profile memory.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Item 8: Video Embeds -->
+                            <div class="cycle-item" style="padding: 0;">
+                                <div class="list-item" style="border: none !important; padding: 4rem; text-align: left; align-items: flex-start;">
+                                    <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase;">DESIGN SYSTEM</p>
+                                    <h2 style="margin-bottom: 1.5rem;">Video Embeds</h2>
+                                    <p style="font-size: 1.1rem; color: var(--text-main);">479x216px wide landscape cards for high-depth feature demonstrations.</p>
+                                    <div style="margin-top: 1rem;">
+                                        <div class="list-item" style="background: none; padding: 0; border: none; margin-bottom: 0.5rem;"><strong>Function:</strong> Media embed component for in-car video tutorials.</div>
+                                        <div class="list-item" style="background: none; padding: 0; border: none;"><strong>Design:</strong> Rounded thumbnail on right with contextual label text on left.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-card img-card">
+                        <img src="assets/ui/UI_library.png" alt="XEV 9e UI Library" style="object-fit: contain; width: 100%; height: 100%; padding: 2rem;">
+                    </div>
+                </div>
+            </section>
+            <!-- 25. Feasibility -->
+            <section class="slide">
+                <div class="slide-bg"></div>
+                <div class="full-content">
+                    <div class="text-block" style="text-align: left; max-width: 800px; margin: 0 auto;">
+                        <p style="color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-bottom: 0.5rem;">FEASIBILITY</p>
+                        <h2>Constraints</h2>
+                        <div class="challenge-card"><h3>Stationary-Only Scope</h3><p>The entire MR session is strictly restricted to parked vehicles or showroom floors. Because bulky MR headsets restrict user movement, this limitation is necessary to ensure maximum safety and comfort, and to completely eliminate the risk of motion sickness and sensory conflict.</p></div>
+                        <div style="margin-top: 1rem;" class="challenge-card"><h3>Hardware and Thermal Limits</h3><p>The experience is targeted at Meta Quest-class MR headsets with passthrough capabilities. Due to the physical limits of current-gen hardware, the session is capped at a 10–15 minute window to prevent thermal discomfort and headset fatigue.</p></div>                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img src="" alt="Fullscreen view" id="lightboxImg">
+    </div>
+
+    <!-- GSAP & Scroll Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SplitText (Club GSAP trial) -->
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

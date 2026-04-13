@@ -1,0 +1,23 @@
+# Notes for Immersive Design (30/3/2026)
+
+- Define your industry
+- What are you trying to solve and why are you trying to solve
+- Workflow and methodology
+- Final problem statement
+- To be and As is (the new why, if changed)
+- Define the users and buyers
+- Solution in one line
+- System design
+    - User Goal [Journey within the exp (storyboarding) / IA / User flow)
+    - Environment Setup
+    - VR / MR / AR → Ergonomic Guidelines [FOV / Comfort zones / Spatial awareness, etc.]
+    - Interaction Modalities [ Selection, Navigation, Object handling, etc.]
+    - UI Standards
+        - Color pallete & guide
+        - Typography
+        - Components (UI)
+        - Visual Guides
+        - Icon sets
+- Limitations and constraints
+- Implementation plan
+- Future scope

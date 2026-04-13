@@ -1,0 +1,708 @@
+:root {
+    --bg: #001219;
+    --surface: rgba(0, 15, 25, 0.98); /* Nearly solid for maximum readability */
+    --primary: #0A9396;
+    --primary-dark: #005F73;
+    --accent: #EE9B00;
+    --accent-dark: #CA6702;
+    --accent-light: #E9D8A6;
+    --danger: #AE2012;
+    --danger-dark: #9B2226;
+    --warning: #BB3E03;
+    --text-main: #f0f0f5;
+    --text-muted: #94D2BD;
+    --slide-transition: 1s cubic-bezier(0.85, 0, 0.15, 1);
+    --glass-border: rgba(148, 210, 189, 0.45); /* More defined border */
+    --glow-primary: rgba(10, 147, 150, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Let Lenis handle smooth scrolling */
+    scroll-behavior: auto;
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: 'Archivo', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-weight: 900;
+}
+
+/* ─── Presentation Container ─── */
+.presentation-container {
+    width: 100vw;
+    position: relative;
+}
+
+.slides-wrapper {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Slide Base ─── */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 6vw;
+    background-color: var(--bg);
+    will-change: transform, opacity;
+    overflow: hidden;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Z-index stacking: later slides on top */
+.slide:nth-child(1) { z-index: 1; }
+.slide:nth-child(2) { z-index: 2; }
+.slide:nth-child(3) { z-index: 3; }
+.slide:nth-child(4) { z-index: 4; }
+.slide:nth-child(5) { z-index: 5; }
+.slide:nth-child(6) { z-index: 6; }
+.slide:nth-child(7) { z-index: 7; }
+.slide:nth-child(8) { z-index: 8; }
+.slide:nth-child(9) { z-index: 9; }
+.slide:nth-child(10) { z-index: 10; }
+.slide:nth-child(11) { z-index: 11; }
+.slide:nth-child(12) { z-index: 12; }
+.slide:nth-child(13) { z-index: 13; }
+.slide:nth-child(14) { z-index: 14; }
+.slide:nth-child(15) { z-index: 15; }
+.slide:nth-child(16) { z-index: 16; }
+.slide:nth-child(17) { z-index: 17; }
+.slide:nth-child(18) { z-index: 18; }
+.slide:nth-child(19) { z-index: 19; }
+.slide:nth-child(20) { z-index: 20; }
+.slide:nth-child(21) { z-index: 21; }
+.slide:nth-child(22) { z-index: 22; }
+.slide:nth-child(23) { z-index: 23; }
+.slide:nth-child(24) { z-index: 24; }
+.slide:nth-child(25) { z-index: 25; }
+
+/* ─── Slide Background ─── */
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 85% 15%, rgba(10, 147, 150, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 15% 85%, rgba(238, 155, 0, 0.1) 0%, transparent 40%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ─── Content Layouts ─── */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    max-width: 1400px;
+    width: 100%;
+    max-height: 82vh;
+    align-items: center;
+    will-change: transform, opacity;
+}
+
+.full-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    max-height: 82vh;
+    text-align: center;
+    will-change: transform, opacity;
+}
+
+/* ─── Text Block ─── */
+.text-block {
+    overflow: hidden;
+}
+
+/* ─── Half-Screen Card Grid (Split View) ─── */
+.card-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    max-width: none !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: none !important;
+    align-items: stretch;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide:has(.card-grid) {
+    padding: 0 !important;
+}
+
+/* ─── Slide Card (glassmorphism panel) ─── */
+.slide-card {
+    background: var(--surface);
+    backdrop-filter: blur(30px); /* Stronger blur */
+    -webkit-backdrop-filter: blur(30px);
+    border-right: 1px solid var(--glass-border);
+    border-radius: 0;
+    padding: 8vh 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+.slide-card:last-child {
+    border-right: none;
+}
+
+/* Image card: no padding, image fills edge-to-edge */
+.img-card {
+    padding: 4vh 2vw; /* Breathing room for the 'fitted' look */
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the car is fully visible */
+    display: block;
+}
+
+/* Image-stack inside a card: tighter padding, gap between images */
+.slide-card.image-stack-grid {
+    padding: 0;
+    gap: 0;
+    display: grid;
+    max-height: none !important; /* Override global 75vh limit to fill 100vh */
+}
+
+/* ─── Cycle Items for Slide 8 ─── */
+.cycle-card {
+    position: relative;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none;
+}
+
+.cycle-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cycle-item {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 6vh 3vw; /* Add some breathing room around the whole subdivided card */
+    will-change: transform, opacity;
+}
+
+.cycle-item .image-container {
+    height: 50%;
+    width: 100%;
+    border-radius: 24px 24px 0 0 !important;
+    border-bottom: none;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.4); /* Darker background to fit white sketches */
+}
+
+.cycle-item .image-container img {
+    object-fit: contain; /* Ensure full storyboard sketches are visible */
+    padding: 1rem;
+}
+
+.cycle-item .list-item {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid var(--glass-border) !important;
+    border-top: none !important;
+    border-radius: 0 0 24px 24px !important;
+    padding: 3vh 2vw;
+    background: var(--surface);
+    backdrop-filter: blur(30px);
+    margin-bottom: 0;
+    gap: 1rem;
+    height: auto;
+}
+
+/* Slide 7 stakeholders fit */
+.slide:nth-child(7) .image-container img {
+    object-fit: cover;
+}
+
+.cycle-item .list-item strong {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.cycle-item .list-item p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Simplify image-containers when nested inside a slide-card */
+.slide-card.image-stack-grid .image-container {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 0;
+    padding: 2rem;
+    height: 100%;
+}
+
+.slide-card.image-stack-grid .image-container:last-child {
+    border-bottom: none;
+}
+
+.slide-card.image-stack-grid .image-container img {
+    object-fit: contain;
+}
+
+/* ─── Methodology Stacking Cards ─── */
+.methodology-stack {
+    display: block !important;
+    position: relative;
+    width: 600px;
+    height: 380px; /* Fixed height for stacking area */
+    margin-top: 4rem;
+}
+
+.methodology-slide .challenge-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    transition: none; /* Let GSAP handle everything */
+}
+
+/* Give them slight varying rotations/offsets via GSAP later, 
+   but define base stacking here if needed */
+.methodology-slide .challenge-card:nth-child(1) { z-index: 1; }
+.methodology-slide .challenge-card:nth-child(2) { z-index: 2; }
+.methodology-slide .challenge-card:nth-child(3) { z-index: 3; }
+.methodology-slide .challenge-card:nth-child(4) { z-index: 4; }
+
+.text-block h2, .text-block p, .full-content h2, .full-content p, .full-content h1 {
+    position: relative;
+}
+
+/* ─── SplitText Line Masking ─── */
+.line-mask {
+    overflow: hidden;
+    display: block;
+    padding: 0.1em 0; /* Extra safety for descenders and ascenders */
+}
+
+.split-line {
+    display: block;
+    will-change: transform, opacity;
+}
+
+/* ─── Typography ─── */
+.slide h2 {
+    font-size: clamp(2rem, 5vh, 3.8rem);
+    margin-bottom: 2vh;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.text-block p {
+    font-size: clamp(1rem, 2.2vh, 1.25rem);
+    color: var(--text-muted);
+    margin-bottom: 2.5vh;
+    font-weight: 300;
+}
+
+/* ─── List Items ─── */
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.2vh;
+    gap: 1.2rem;
+    font-size: clamp(0.9rem, 1.8vh, 1.1rem);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.2vh 1.5vw;
+    border-radius: 16px;
+    border-left: 4px solid var(--primary-dark);
+    will-change: transform, opacity;
+}
+
+.list-item strong {
+    color: var(--accent-light);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+}
+
+/* ─── Image Containers ─── */
+.image-container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    border: 1px solid var(--glass-border);
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    height: 100%;
+    display: flex;
+    will-change: clip-path;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform;
+}
+
+/* ─── Image Stacks ─── */
+.image-stack-grid {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+    height: 100%;
+    max-height: 75vh;
+    will-change: clip-path;
+}
+
+.image-stack-grid-2 { grid-template-rows: 1fr 1fr; }
+.image-stack-grid-3 { grid-template-rows: 1fr 1fr 1fr; }
+.image-stack-grid-6 { 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+/* ─── Storyboard & Cards ─── */
+.storyboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.storyboard-item {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid var(--glass-border);
+    text-align: left;
+    will-change: transform, opacity;
+}
+
+.storyboard-item img { 
+    width: 100%; 
+    aspect-ratio: 16/10; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    margin-bottom: 1.5rem; 
+}
+
+.challenge-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    text-align: left;
+    will-change: transform, opacity;
+}
+
+.challenge-card h3 { 
+    color: var(--accent-light); 
+    font-size: 1.2rem; 
+    margin-bottom: 0.8rem; 
+}
+
+/* ─── Title Slide ─── */
+.title-slide {
+    background-image: linear-gradient(to bottom, rgba(0, 18, 25, 0.6), rgba(0, 18, 25, 0.9)), url('assets/images/slide 1.png');
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.title-slide .full-content {
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.title-slide .supertitle {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.6em;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-size: 0.9rem;
+    display: block;
+}
+
+.title-slide h1 {
+    font-size: clamp(4rem, 16vh, 9.5rem);
+    line-height: 0.85;
+    margin-bottom: 1rem;
+    padding: 0.1em 0;
+    color: var(--text-main); /* Fallback */
+}
+
+/* Apply gradient to the split lines to ensure visibility with GSAP */
+.title-slide h1 .split-line {
+    background: linear-gradient(to bottom right, #ffffff 20%, var(--primary) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.1em;
+}
+
+.title-slide .tagline {
+    font-size: clamp(1.1rem, 2.5vh, 1.4rem);
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0.9;
+    color: var(--text-muted);
+    border-left: none;
+    padding-left: 0;
+    position: relative;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.title-slide .tagline::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+/* ─── Progress Bar ─── */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-dark), var(--accent));
+    width: 0%;
+    z-index: 1000;
+    transition: none; /* Let GSAP handle smoothing via scrub */
+}
+
+/* ─── Slide Indicator ─── */
+.slide-indicator {
+    position: fixed;
+    bottom: 4.5rem;
+    left: 4rem;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.4em;
+    font-weight: 900;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    transition: color 0.3s, background 0.3s;
+    z-index: 1000;
+}
+
+/* ─── Auto Scroll Controls ─── */
+.auto-scroll-controls {
+    position: fixed;
+    top: 2rem;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+}
+
+.auto-scroll-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 60px;
+}
+
+.auto-scroll-btn.playing {
+    background: var(--danger);
+}
+
+.auto-scroll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--glow-primary);
+}
+
+.speed-selector {
+    display: flex;
+    gap: 0.4rem;
+    border-left: 1px solid var(--glass-border);
+    padding-left: 1rem;
+}
+
+.speed-btn {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    border: 1px solid transparent;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.speed-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.speed-btn.active {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+}
+
+.slide-indicator:hover {
+    color: var(--accent-light);
+    background: rgba(255,255,255,0.05);
+}
+
+/* ─── Lightbox ─── */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 18, 25, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    cursor: zoom-out;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+    border: 1px solid var(--glass-border);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: 0.3s;
+    z-index: 2001;
+}
+
+.close-lightbox:hover {
+    color: var(--accent);
+    transform: rotate(90deg);
+}
+
+/* ─── Image Hover States ─── */
+.image-container img, .storyboard-item img {
+    cursor: zoom-in;
+    transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container img:hover, .storyboard-item img:hover {
+    filter: brightness(1.1);
+}
+
+/* ─── Controls (hidden for scroll mode but kept for reference) ─── */
+.controls {
+    display: none;
+}
