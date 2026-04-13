@@ -630,10 +630,14 @@ h1, h2, h3 {
     background: rgba(255,255,255,0.1);
 }
 
-.speed-btn.active {
-    background: var(--accent);
-    color: var(--bg);
-    font-weight: 700;
+/* ─── Loading Overlay ─── */
+#loadingOverlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#loadingBar {
+    box-shadow: 0 0 15px var(--glow-primary);
 }
 
 .slide-indicator:hover {

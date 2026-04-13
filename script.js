@@ -1,3 +1,45 @@
+// ─── Image Preloading Logic ───
+const preloadImages = () => {
+    const images = Array.from(document.querySelectorAll('img'));
+    // Include Slide 1 background image
+    const bgImage = new Image();
+    bgImage.src = 'assets/images/slide 1.png';
+    const allMedia = [bgImage, ...images];
+    
+    let loadedCount = 0;
+    const totalMedia = allMedia.length;
+    const loadingBar = document.getElementById('loadingBar');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const loadingText = document.getElementById('loadingText');
+
+    const updateProgress = () => {
+        loadedCount++;
+        const progress = Math.round((loadedCount / totalMedia) * 100);
+        loadingBar.style.width = `${progress}%`;
+        loadingText.innerText = `Preloading Assets... ${progress}%`;
+
+        if (loadedCount >= totalMedia) {
+            setTimeout(() => {
+                loadingOverlay.classList.add('fade-out');
+                // Refresh ScrollTrigger to ensure correct heights
+                ScrollTrigger.refresh();
+            }, 500);
+        }
+    };
+
+    allMedia.forEach(img => {
+        if (img.complete) {
+            updateProgress();
+        } else {
+            img.onload = updateProgress;
+            img.onerror = updateProgress; // Continue even if one fails
+        }
+    });
+};
+
+// Start preloading after DOM is ready
+window.addEventListener('load', preloadImages);
+
 // ─── Register GSAP Plugins ───
 if (typeof SplitText !== "undefined") {
     gsap.registerPlugin(ScrollTrigger, SplitText);
